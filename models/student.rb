@@ -20,6 +20,20 @@ class Student
     @id = result['id'].to_i
   end
 
-  
+  def self.find_all()
+    sql = "SELECT * FROM students;"
+    return self.map_items(sql)
+  end
+
+  def self.find(search_id)
+    sql = "SELECT * FROM students WHERE id = #{search_id}"
+    return self.map_items(sql)
+  end
+
+  def self.map_items(sql)
+    results = SqlRunner.run(sql)
+    students = results.map{ |student| Student.new(student)}
+    return students
+  end
 
 end
