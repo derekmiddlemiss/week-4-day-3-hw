@@ -2,6 +2,7 @@ require('pry')
 require('sinatra')
 require('sinatra/contrib/all') if development?
 require_relative('./models/student')
+require_relative('./models/house')
 
 
 # results = Student.find_all
@@ -14,6 +15,7 @@ get '/students' do
 end
 
 get '/students/new' do
+  @houses = House.find_all
   erb(:new)
 end
 
