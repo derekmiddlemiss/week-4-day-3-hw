@@ -8,3 +8,8 @@ require_relative('./models/student')
 # binding.pry
 # nil
 
+get '/students' do 
+  @students = Student.find_all()
+  erb(:index)
+end
+
