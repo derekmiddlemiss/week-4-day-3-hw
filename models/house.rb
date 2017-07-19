@@ -20,4 +20,19 @@ class House
     @id = results['id'].to_i
   end
 
+def self.find_all()
+  sql = "SELECT * FROM houses;"
+  return self.map_items(sql)
+end
+
+def self.find(search_id)
+  sql = "SELECT * FROM houses WHERE id = #{search_id}"
+  return self.map_items(sql).first
+end
+
+  def self.map_items(sql)
+    results = SqlRunner.run(sql)
+    return results.map{ |house| House.new(house) }
+  end
+
 end

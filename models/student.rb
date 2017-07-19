@@ -8,7 +8,7 @@ class Student
     @id = params['id'].to_i if params['id']
     @first_name = params['first_name']
     @last_name = params['last_name']
-    @house = params['house']
+    @house = params['house'].to_i
     @age = params['age'].to_i
   end
 
@@ -20,6 +20,11 @@ class Student
     @id = result['id'].to_i
   end
 
+  def find_house
+    sql = "SELECT * FROM houses WHERE id = #{@house};"
+    return House.map_items(sql).first
+  end
+
   def self.find_all()
     sql = "SELECT * FROM students;"
     return self.map_items(sql)
@@ -27,13 +32,12 @@ class Student
 
   def self.find(search_id)
     sql = "SELECT * FROM students WHERE id = #{search_id}"
-    return self.map_items(sql)
+    return self.map_items(sql).first
   end
 
   def self.map_items(sql)
     results = SqlRunner.run(sql)
-    students = results.map{ |student| Student.new(student)}
-    return students
+    return results.map{ |student| Student.new(student)}
   end
 
 end

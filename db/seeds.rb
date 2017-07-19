@@ -1,30 +1,6 @@
 require_relative('../models/student.rb')
 require_relative('../models/house.rb')
 
-student1 = Student.new({
-'first_name' => 'Harry',
-'last_name' => 'Potter',
-'house' => 'Gryffindor',
-'age' => 11 
-  })
-
-student2 = Student.new({
-'first_name' => 'Barry',
-'last_name' => 'Trotter',
-'house' => 'Slytherin',
-'age' => 45 
-  })
-
-student3 = Student.new({
-'first_name' => 'Gandalf',
-'last_name' => 'Grey',
-'house' => 'Ravenclaw',
-'age' => 400
-  })
-
-student1.save()
-student2.save()
-student3.save()
 
 house1 = House.new({
   'name' => 'Gryffindor',
@@ -50,3 +26,28 @@ house1.save()
 house2.save()
 house3.save()
 house4.save()
+
+student1 = Student.new({
+'first_name' => 'Harry',
+'last_name' => 'Potter',
+'house' => 1,
+'age' => 11 
+  })
+
+student2 = Student.new({
+'first_name' => 'Barry',
+'last_name' => 'Trotter',
+'house' => 2,
+'age' => 45 
+  })
+
+student3 = Student.new({
+'first_name' => 'Gandalf',
+'last_name' => 'Grey',
+'house' => 4,
+'age' => 400
+  })
+
+student1.save()
+student2.save()
+student3.save()
