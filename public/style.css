@@ -1,0 +1,27 @@
+.grid {
+  border: solid 1px slateblue;
+}
+
+.grid-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.cell {
+  flex: 1;
+  padding: 10px;
+  border: solid 1px #aeaeae;
+  justify-content: center; 
+}
+
+#hogwarts {
+  width: 200px ;
+  display: block;
+  position: center;
+}
+
+@media all and ( min-width: 480px ) {
+  .grid-row-sm {
+    flex-direction: row;
+  }
+}

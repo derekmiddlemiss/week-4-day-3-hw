@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+  <link rel="stylesheet" type="text/css" href="/style.css">
   <meta charset="utf-8"> 
   <title>School of Advanced Sourcery</title>
 </head>
 <body>
+<div class="grid">
+    <div class="grid-row grid-row-sm">
+      <div class="cell"> 
+        <img id=hogwarts src="https://images.pottermore.com/bxd3o8b291gf/1TD8f1pgxycgSWieMqIie4/8421085d0a28a553a48e3c613bd09554/HogwartsCastle_WB_F3_HogwartsCastleAndWhompingWillow_Still_080615_Land.jpg?w=320&h=320&fit=thumb&f=center&q=85" >
+      </div>
+      <div class="cell">
+        <nav>
+          <a href="/students">All Students</a>
+          <a href="/students/new">Create Student</a>
+        </nav>
+      </div>
+    </div>
+  </div>
   <%= yield %>
 </body>
 </html>

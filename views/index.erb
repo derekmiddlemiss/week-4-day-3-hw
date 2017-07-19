@@ -2,7 +2,7 @@
 <% @students.each do |student| %>
   <p>first_name: <%= student.first_name %></p>
   <p>last_name: <%= student.last_name %></p>
-  <p>house: <%= student.house %></p>
+  <p>house:</p> <img src="<%=student.find_house().image_url()%>" alt="Image of crest of House <%=student.find_house().name()%>">
   <p>age: <%= student.age %></p>
   <hr>
 <% end %>
